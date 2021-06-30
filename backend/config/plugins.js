@@ -1,7 +1,7 @@
 
 
 module.exports =({env})=>{
-    if(env('NODE_EVENT')==='production'){
+    if(env('NODE_ENV')==='production'){
     return{
     upload:{
         provider:'aws-s3',
@@ -10,7 +10,7 @@ module.exports =({env})=>{
             secretAccessKey:env('AWS_SECRET'),
             region:env('AWS_REGION'),
             params:{
-                Bucket:env('BUCKET')
+                Bucket:env('AWS_BUCKET')
             }
         }
     }
